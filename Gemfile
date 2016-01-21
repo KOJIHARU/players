@@ -40,6 +40,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'database_rewinder'
   gem 'guard-rspec'
+  gem 'guard-rubocop'
   gem 'growl'
   gem 'pry-rails'
   gem 'pry-byebug'

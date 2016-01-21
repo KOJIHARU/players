@@ -1,0 +1,28 @@
+AllCops:
+  Include:
+    - '**/config.ru'
+  Exclude:
+    - 'front/**/*'
+    - 'test/**/*'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスにコメントを残さない
+Documentation:
+  Enabled: false
+
+# クラス、モジュールをcompact形式で記述
+ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+# ABCサイズをMAX20に緩和
+Metrics/AbcSize:
+  Enabled: true
+  Max: 30
