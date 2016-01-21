@@ -1,0 +1,27 @@
+box: wercker/rvm
+services:
+  - wercker/postgresql
+build:
+  steps:
+    - bundle-install
+    - rails-database-yml
+    - script:
+        name: Set up DB
+        code: RAILS_ENV=test bundle exec rake db:schema:load
+    - script:
+        name: Test using Rspec
+        code: RAILS_ENV=test bundle exec rspec
+    - script:
+        name: Check rubocop
+        code: RAILS_ENV=test bundle exec rubocop app spec lib
+  after-steps:
+    - hipchat-notify:
+        token: $HIPCHAT_TOKEN
+        room-id: $HIPCHAT_ROOM_ID
+
+deploy:
+  steps:
+    - heroku-deploy:
+        key-name: HEROKU_SSH_KEY
+        run: |-
+          rake db:migrate --app players-test
