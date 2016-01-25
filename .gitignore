@@ -11,3 +11,11 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore front files.
+/bower_components
+/node_modules
+front/coverage/
+front/.sass-cache/
+front/.idea/
+.tmp/
