@@ -21,6 +21,7 @@ build:
 
 deploy:
   steps:
+    - npm-install:
     - heroku-deploy:
         key-name: HEROKU_SSH_KEY
         run: |-
