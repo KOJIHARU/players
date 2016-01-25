@@ -20,6 +20,10 @@ gem 'therubyracer'
 gem 'airbrake'
 gem 'sidekiq'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'annotate'

@@ -1,11 +1,9 @@
 {
   "name": "front",
   "version": "0.0.0",
-  "dependencies": {
-    "gulp": "~3.9.0"
-  },
+  "dependencies": {},
   "scripts": {
-    "postinstall": "gulp build",
+    "postinstall": "bower install && gulp build",
     "test": "gulp test"
   },
   "devDependencies": {
@@ -56,5 +54,9 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "cacheDirectories": [
+    "bower_components",
+    "node_modules"
+  ]
 }
