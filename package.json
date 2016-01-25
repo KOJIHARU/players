@@ -2,7 +2,7 @@
   "name": "front",
   "version": "0.0.0",
   "dependencies": {
-    "gulp": "~3.9.0",
+    "gulp": "~3.9.0"
   },
   "scripts": {
     "postinstall": "gulp build",
