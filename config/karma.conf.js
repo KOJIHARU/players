@@ -1,3 +1,5 @@
+// TODO: specディレクトリ以下にkarma initで作成したファイルを配置しました
+// テスト方法が確立した時点でこのファイルを削除します
 'use strict';
 
 var path = require('path');

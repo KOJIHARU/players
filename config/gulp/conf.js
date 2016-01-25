@@ -15,7 +15,7 @@ exports.paths = {
   src: 'src',
   dist: 'public',
   tmp: '.tmp',
-  e2e: './front/e2e'
+  e2e: './config/e2e'
 };
 
 /**
