@@ -21,8 +21,8 @@ build:
 
 deploy:
   steps:
-    - npm-install:
     - heroku-deploy:
         key-name: HEROKU_SSH_KEY
+        install-toolbelt: true
         run: |-
           rake db:migrate --app players-test
