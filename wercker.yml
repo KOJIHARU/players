@@ -28,3 +28,9 @@ deploy:
         install-toolbelt: true
         run: |-
           rake db:migrate --app players-test
+  after-steps:
+    - sherzberg/slack-notify:
+        subdomain: players-kojiharu
+        token: $SLACK_TOKEN
+        username: wercker
+        channel: "#general"
