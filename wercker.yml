@@ -15,13 +15,22 @@ build:
         name: Check rubocop
         code: RAILS_ENV=test bundle exec rubocop app spec lib
   after-steps:
-    - hipchat-notify:
-        token: $HIPCHAT_TOKEN
-        room-id: $HIPCHAT_ROOM_ID
+    - sherzberg/slack-notify:
+        subdomain: players-kojiharu
+        token: $SLACK_TOKEN
+        username: wercker
+        channel: "#general"
 
 deploy:
   steps:
     - heroku-deploy:
         key-name: HEROKU_SSH_KEY
+        install-toolbelt: true
         run: |-
           rake db:migrate --app players-test
+  after-steps:
+    - sherzberg/slack-notify:
+        subdomain: players-kojiharu
+        token: $SLACK_TOKEN
+        username: wercker
+        channel: "#general"
