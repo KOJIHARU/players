@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('front')
+    .module('players')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

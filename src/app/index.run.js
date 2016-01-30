@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front')
+    .module('players')
     .run(runBlock);
 
   /** @ngInject */
