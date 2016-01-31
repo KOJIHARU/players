@@ -12,7 +12,7 @@ var pathSrcHtml = [
 ];
 
 var pathSrcJs = [
-  path.join(conf.paths.tmp, '/**/!(*.spec).js')
+  path.join(conf.paths.src, 'serve/**/!(*.spec).js')
 ];
 
 function runTests (singleRun, done) {
