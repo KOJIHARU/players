@@ -17,7 +17,6 @@ gem 'quiet_assets'
 gem 'bootstrap-sass'
 gem 'sprockets-rails'
 gem 'therubyracer'
-gem 'airbrake'
 gem 'sidekiq'
 
 group :production do
@@ -48,4 +47,5 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'hirb'
   gem 'bullet'
+  gem 'simplecov'
 end

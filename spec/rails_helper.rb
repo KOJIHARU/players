@@ -22,23 +22,22 @@ Capybara.register_driver :selenium do |app|
                                  browser: :firefox, http_client: http_client)
 end
 
-OmniAuth.config.test_mode = true
+# TODO: OmniAuthを利用した際に追加
+# OmniAuth.config.test_mode = true
 
-OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new(
-  provider: 'twitter',
-  uid: '123456',
-  info: { name: 'name', nickname: 'NickName' },
-  credentials: { token: 'TOKEN' }
-)
+# OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new(
+#   provider: 'twitter',
+#   uid: '123456',
+#   info: { name: 'name', nickname: 'NickName' },
+#   credentials: { token: 'TOKEN' }
+# )
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
-  config.include Devise::TestHelpers, type: :controller
   config.include Capybara::DSL
-  config.include Warden::Test::Helpers
   config.include ActiveJob::TestHelper
 
   # Spork.each_run { FactoryGirl.reload }
@@ -52,7 +51,6 @@ RSpec.configure do |config|
   config.before(:suite) do
     I18n.locale = :ja
     Faker::Config.locale = :en
-    Warden.test_mode!
     begin
       FactoryGirl.lint
     ensure
