@@ -5,8 +5,8 @@
 form(novalidate=true name='loginForm' ng-submit='login.submit()')
   .form-group
     label(for='email')
-    span メールアドレス
-    span *
+      span メールアドレス
+      span *
     input.form-control#email(type='email' autofocus=true name='email' ng-model='login.email' required=true ng-maxlength='100')
     span.errors(ng-messages='loginForm.email.$error' ng-show='loginForm.$submitted')
       div(ng-message='required')

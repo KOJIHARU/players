@@ -6,6 +6,7 @@ form(novalidate=true name='signUpForm' ng-submit='sign_up.submit()')
   .form-group
     label(for='email')
       span メールアドレス
+      span *
     input.form-control#email(type='email' autofocus=true name='email' ng-model='sign_up.email' required=true ng-maxlength='100')
     span.errors(ng-messages='signUpForm.email.$error' ng-show='signUpForm.$submitted')
       div(ng-message='required')
