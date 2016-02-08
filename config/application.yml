@@ -1,0 +1,23 @@
+defaults: &defaults
+  mail_from: <%= ENV['PLAYERS_MAIL_FROM'] %>
+  access_token:
+    length: 32
+    expire_after: <%= 90.days.to_i %>
+  registration_token:
+    length: 32
+    expire_after: <%= 24.hours.to_i %>
+  user:
+    email:
+      maximum_length: 100
+    password:
+      maximum_length: 72
+      minimum_length: 4
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
