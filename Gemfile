@@ -18,6 +18,10 @@ gem 'bootstrap-sass'
 gem 'sprockets-rails'
 gem 'therubyracer'
 gem 'sidekiq'
+gem 'tokens'
+gem 'bcrypt'
+gem 'settingslogic'
+gem 'validates_email_format_of'
 
 group :production do
   gem 'rails_12factor'
