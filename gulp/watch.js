@@ -25,7 +25,10 @@ gulp.task('watch', ['markups', 'inject'], function () {
     }
   });
 
-  gulp.watch(path.join(conf.paths.src, '/app/**/*.js'), function(event) {
+  gulp.watch([
+    path.join(conf.paths.src, '/app/**/*.js'),
+    path.join(conf.paths.src, '/app/**/*.coffee')
+  ], function(event) {
     if(isOnlyChange(event)) {
       gulp.start('scripts-reload');
     } else {
@@ -33,7 +36,7 @@ gulp.task('watch', ['markups', 'inject'], function () {
     }
   });
 
-  gulp.watch(path.join(conf.paths.src, '/app/**/*.haml'), ['markups']);
+  gulp.watch(path.join(conf.paths.src, '/app/**/*.jade'), ['markups']);
 
   gulp.watch(path.join(conf.paths.src, '/app/**/*.html'), function(event) {
     browserSync.reload(event.path);

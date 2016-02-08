@@ -1,0 +1,37 @@
+.alert.alert-danger(role='alert' ng-show='login.errors')
+  button.close(data-dismiss='alert' type='button' ng-click='login.clearErrors()') ×
+  ul(ng-repeat='error in login.errors')
+    li {{error}}
+form(novalidate=true name='loginForm' ng-submit='login.submit()')
+  .form-group
+    label(for='email')
+      span メールアドレス
+      span *
+    input.form-control#email(type='email' autofocus=true name='email' ng-model='login.email' required=true ng-maxlength='100')
+    span.errors(ng-messages='loginForm.email.$error' ng-show='loginForm.$submitted')
+      div(ng-message='required')
+        span.glyphicon.glyphicon-alert
+        span メールアドレスを入力してください
+      div(ng-message='email')
+        span.glyphicon.glyphicon-alert
+        span メールアドレスの形式が不正です
+      div(ng-message='maxlength')
+        span.glyphicon.glyphicon-alert
+        span メールアドレスは100文字以内で入力してください
+  .form-group
+    label(for='password')
+      span パスワード
+      span *
+    input.form-control#password(type='password' name='password' ng-model='login.password' required=true ng-maxlength='72' ng-minlength='4')
+    span.errors(ng-messages='loginForm.password.$error' ng-show='loginForm.$submitted')
+      div(ng-message='required')
+        span.glyphicon.glyphicon-alert
+        span パスワードを入力してください
+      div(ng-message='maxlength')
+        span.glyphicon.glyphicon-alert
+        span パスワードは32文字以内で入力してください
+      div(ng-message='minlength')
+        span.glyphicon.glyphicon-alert
+        span パスワードは4文字以上で入力してください
+  button.btn.btn-primary(type='submit' ng-disabled='loginForm.$submitted && loginForm.$invalid')
+    span ログイン
