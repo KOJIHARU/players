@@ -22,6 +22,7 @@ gem 'tokens'
 gem 'bcrypt'
 gem 'settingslogic'
 gem 'validates_email_format_of'
+gem 'rails-i18n'
 
 group :production do
   gem 'rails_12factor'
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'faker'
   gem 'gimei'
   gem 'json_spec'
+  gem 'rspec-json_matcher', require: false
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'database_rewinder'
@@ -52,4 +54,7 @@ group :development, :test do
   gem 'hirb'
   gem 'bullet'
   gem 'simplecov'
+  gem 'rspec-collection_matchers'
+  gem 'shoulda-matchers', ">= 3.0.0", require: false
+  gem 'timecop'
 end

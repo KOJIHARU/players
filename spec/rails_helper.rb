@@ -2,25 +2,27 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'factory_girl_rails'
+require 'shoulda/matchers'
 require 'rspec/rails'
-require 'capybara/rails'
 require 'capybara/email/rspec'
 require 'faker'
 require 'simplecov'
 require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
+require 'rspec/json_matcher'
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+::Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :active_record
+    with.library :active_model
+  end
+end
 
 SimpleCov.start 'rails'
+RSpec.configuration.include RSpec::JsonMatcher
 
 ActiveRecord::Migration.maintain_test_schema!
-
-Capybara.default_wait_time = 5
-Capybara.register_driver :selenium do |app|
-  http_client = Selenium::WebDriver::Remote::Http::Default.new
-  http_client.timeout = 100
-  Capybara::Selenium::Driver.new(app,
-                                 browser: :firefox, http_client: http_client)
-end
 
 # TODO: OmniAuthを利用した際に追加
 # OmniAuth.config.test_mode = true
