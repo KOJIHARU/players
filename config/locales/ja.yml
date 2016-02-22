@@ -9,5 +9,3 @@ ja:
   user_mailer:
     registration:
       subject: アカウント登録のご案内
-    finished_registration:
-      subject: アカウント登録完了のお知らせ

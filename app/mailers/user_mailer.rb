@@ -7,10 +7,4 @@ class UserMailer < ApplicationMailer
     @registration_url = registration_url
     mail to: email
   end
-
-  # アカウント登録完了のお知らせ TODO: 必要不要を検討する
-  def finished_registration(email)
-    @email = email
-    mail to: email
-  end
 end
