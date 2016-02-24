@@ -54,6 +54,7 @@ GEM
     autoprefixer-rails (6.3.1)
       execjs
       json
+    awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -203,6 +204,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-i18n (4.0.8)
+      i18n (~> 0.7)
+      railties (~> 4.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -226,11 +230,16 @@ GEM
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
+    rspec-collection_matchers (1.1.2)
+      rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
+    rspec-json_matcher (0.1.5)
+      awesome_print
+      json
     rspec-mocks (3.4.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
@@ -261,6 +270,8 @@ GEM
       rdoc (~> 4.0)
     settingslogic (2.0.9)
     shellany (0.0.1)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
     sidekiq (4.0.2)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -285,6 +296,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    timecop (0.8.0)
     tokens (2.1.1)
     turbolinks (2.5.3)
       coffee-rails
@@ -340,17 +352,22 @@ DEPENDENCIES
   pry-rails
   quiet_assets
   rails (= 4.2.3)
+  rails-i18n
   rails_12factor
+  rspec-collection_matchers
+  rspec-json_matcher
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   settingslogic
+  shoulda-matchers (>= 3.0.0)
   sidekiq
   simplecov
   spring
   sprockets-rails
   therubyracer
+  timecop
   tokens
   turbolinks
   uglifier (>= 1.3.0)

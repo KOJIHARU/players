@@ -9,6 +9,7 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
+    - 'node_modules/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
 
 # 日本語でのコメントを許可
