@@ -82,10 +82,6 @@ describe 'PATCH /email_user/registrations/:id?token=token', autodoc: true do
 
       user = User.last
       expect(user.status).to eq 'registered'
-
-      open_email(user.email)
-      expect(current_email.subject).to eq 'アカウント登録完了のお知らせ'
-      expect(current_email).to have_content user.email
     end
 
     it 'ログインできるようになっていること' do
