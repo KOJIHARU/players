@@ -15,7 +15,6 @@ class EmailUser::RegistrationsController < ApplicationController
   def regist
     @user = EmailUser.find(params[:registration_id].to_i)
     if @user.registered_by(params[:token])
-      UserMailer.finished_registration(@user.email).deliver_later
       host = Rails.env.production? ? '' : 'http://localhost:3000'
       redirect_to "#{host}/#/?registed=ok"
     else
