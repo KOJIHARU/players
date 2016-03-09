@@ -19,4 +19,5 @@ coverage/
 .idea/
 .tmp/
 dist/
-.env
+.env.development
+.env.test
