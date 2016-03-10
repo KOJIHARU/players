@@ -13,6 +13,7 @@ SignUpController = (AccountFactory) ->
     }
     AccountFactory.postEmailUserRegistration(params).then((res) ->
     ).catch (res) ->
+      vm.errors = res.error_messages
       return
 
   return
