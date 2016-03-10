@@ -57,4 +57,7 @@ group :development, :test do
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers', ">= 3.0.0", require: false
   gem 'timecop'
+  gem 'rack-cors'
+  gem 'letter_opener'
+  gem 'letter_opener_web'
 end

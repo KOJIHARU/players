@@ -1,17 +1,20 @@
-SignUpController = () ->
+SignUpController = (AccountFactory) ->
   'ngInject'
   vm = this
 
   vm.clearErrors = () ->
     vm.errors = ''
 
-  # TODO: 処理は後で書く
   vm.submit = () ->
     params = {
       email: vm.email
       password: vm.password
       password_confirmation: vm.password_confirmation
     }
+    AccountFactory.postEmailUserRegistration(params).then((res) ->
+    ).catch (res) ->
+      return
+
   return
 
 angular.module 'players'

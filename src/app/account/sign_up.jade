@@ -37,7 +37,7 @@ form(novalidate=true name='signUpForm' ng-submit='sign_up.submit()')
     label(for='password_confirmation')
       span パスワード（確認）
     input.form-control#password_confirmation(type='password' name='password_confirmation' ng-model='sign_up.password_confirmation' required=true ng-maxlength='72' ng-minlength='4')
-    span.errors(ng-messages'signUpForm.password_confirmation.$error' ng-show='signUpForm.$submitted')
+    span.errors(ng-messages='signUpForm.password_confirmation.$error' ng-show='signUpForm.$submitted')
       div(ng-message='required')
         span.glyphicon.glyphicon-alert
         span パスワードを入力してください
