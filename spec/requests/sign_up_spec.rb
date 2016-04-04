@@ -85,7 +85,6 @@ describe 'PATCH /email_user/registrations/:id?token=token', autodoc: true do
     end
 
     it 'ログインできるようになっていること' do
-      pending
       get "/email_user/registrations/#{@user_id}/regist", token: @token
       expect(response.status).to eq 302
 
